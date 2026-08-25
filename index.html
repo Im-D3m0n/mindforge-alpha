@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MindForge</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="top-bar"></div>
+
+<div class="app-shell">
+
+  <aside class="sidebar">
+    <div class="brand"><span class="dot"></span><span>MindForge</span></div>
+
+    <nav class="nav">
+      <button class="nav-item active" data-view="overview">
+        <svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>
+        Overview
+      </button>
+      <button class="nav-item" data-view="planner">
+        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Smart Planner
+      </button>
+      <button class="nav-item" data-view="goals">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg>
+        Goal Manager
+      </button>
+      <button class="nav-item" data-view="library">
+        <svg viewBox="0 0 24 24"><path d="M4 4h7v16H4z"/><path d="M13 4h7v16h-7z"/></svg>
+        Study Library
+      </button>
+      <button class="nav-item" data-view="habits">
+        <svg viewBox="0 0 24 24"><path d="M8 4h8v4a4 4 0 0 1-8 0V4z"/><path d="M8 5H5a2 2 0 0 0 2 4"/><path d="M16 5h3a2 2 0 0 1-2 4"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="9" y1="19" x2="15" y2="19"/><line x1="9" y1="19" x2="9" y2="16"/><line x1="15" y1="19" x2="15" y2="16"/></svg>
+        Habit Tracker
+      </button>
+      <button class="nav-item" data-view="progress">
+        <svg viewBox="0 0 24 24"><polyline points="3 17 9 11 13 15 21 6"/><polyline points="14 6 21 6 21 13"/></svg>
+        Progress Dashboard
+      </button>
+      <button class="nav-item" data-view="parent">
+        <svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2.6"/><path d="M2 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M14.5 20c.3-2.5 1.8-4.5 4-5.3"/></svg>
+        Parent Portal
+      </button>
+    </nav>
+
+    <div class="sidebar-foot">Signed in as Dimitris · Sec 1</div>
+  </aside>
+
+  <main class="main">
+
+    <!-- OVERVIEW -->
+    <section id="view-overview" class="view active">
+      <div class="page-head">
+        <h1>Introducing MindForge</h1>
+        <p>MindForge is an integrated digital learning ecosystem consisting of:</p>
+      </div>
+
+      <div class="stat-row">
+        <div class="stat-box"><div class="num" id="ov-due-today">0</div><div class="lbl">Due today</div></div>
+        <div class="stat-box"><div class="num" id="ov-open-tasks">0</div><div class="lbl">Open tasks</div></div>
+        <div class="stat-box"><div class="num" id="ov-goal-avg">0%</div><div class="lbl">Avg. goal progress</div></div>
+        <div class="stat-box"><div class="num" id="ov-best-streak">0d</div><div class="lbl">Best habit streak</div></div>
+      </div>
+
+      <div class="overview-grid">
+        <button class="overview-card" data-goto="planner">
+          <div class="icon-circle"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+          <div class="label">📅 Smart Planner</div>
+          <div class="meta">Add tasks, set priority and due dates, tick things off.</div>
+        </button>
+
+        <button class="overview-card" data-goto="goals">
+          <div class="icon-circle"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1" fill="#fff"/></svg></div>
+          <div class="label">🎯 Goal Manager</div>
+          <div class="meta">Track longer-term goals with a progress bar.</div>
+        </button>
+
+        <button class="overview-card" data-goto="library">
+          <div class="icon-circle"><svg viewBox="0 0 24 24"><path d="M4 4h7v16H4z"/><path d="M13 4h7v16h-7z"/></svg></div>
+          <div class="label">📚 Study Resource Library</div>
+          <div class="meta">Save notes, links, and videos by subject.</div>
+        </button>
+
+        <button class="overview-card" data-goto="habits">
+          <div class="icon-circle"><svg viewBox="0 0 24 24"><path d="M8 4h8v4a4 4 0 0 1-8 0V4z"/><path d="M8 5H5a2 2 0 0 0 2 4"/><path d="M16 5h3a2 2 0 0 1-2 4"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="9" y1="19" x2="15" y2="19"/><line x1="9" y1="19" x2="9" y2="16"/><line x1="15" y1="19" x2="15" y2="16"/></svg></div>
+          <div class="label">🏆 Habit Tracker</div>
+          <div class="meta">Check off daily habits and build streaks.</div>
+        </button>
+
+        <button class="overview-card" data-goto="progress">
+          <div class="icon-circle"><svg viewBox="0 0 24 24"><polyline points="3 17 9 11 13 15 21 6"/><polyline points="14 6 21 6 21 13"/></svg></div>
+          <div class="label">📈 Progress Dashboard</div>
+          <div class="meta">See everything above rolled up in one view.</div>
+        </button>
+
+        <button class="overview-card" data-goto="parent">
+          <div class="icon-circle"><svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg></div>
+          <div class="label">👨‍👩‍👧 Optional Parent Portal</div>
+          <div class="meta">A read-only summary a parent can check in on.</div>
+        </button>
+      </div>
+    </section>
+
+    <!-- PLANNER -->
+    <section id="view-planner" class="view">
+      <div class="page-head">
+        <h1>📅 Smart Planner</h1>
+        <p>Add tasks with a date, time, and priority — then tick them off as you go.</p>
+      </div>
+
+      <form id="task-form" class="panel">
+        <h3>Add a task</h3>
+        <div class="form-row">
+          <input type="text" id="task-title" placeholder="Task title" required>
+          <input type="date" id="task-date">
+          <input type="time" id="task-time">
+          <select id="task-priority">
+            <option value="low">Low priority</option>
+            <option value="medium" selected>Medium priority</option>
+            <option value="high">High priority</option>
+          </select>
+          <button type="submit" class="btn btn-primary">Add task</button>
+        </div>
+      </form>
+
+      <div id="task-list" class="list"></div>
+    </section>
+
+    <!-- GOALS -->
+    <section id="view-goals" class="view">
+      <div class="page-head">
+        <h1>🎯 Goal Manager</h1>
+        <p>Set a goal and a target date, then nudge its progress up as you work toward it.</p>
+      </div>
+
+      <form id="goal-form" class="panel">
+        <h3>Set a goal</h3>
+        <div class="form-row">
+          <input type="text" id="goal-title" placeholder="Goal title" required>
+          <input type="date" id="goal-target">
+          <button type="submit" class="btn btn-primary">Add goal</button>
+        </div>
+      </form>
+
+      <div id="goal-list"></div>
+    </section>
+
+    <!-- LIBRARY -->
+    <section id="view-library" class="view">
+      <div class="page-head">
+        <h1>📚 Study Resource Library</h1>
+        <p>Keep notes, links, and videos organised by subject.</p>
+      </div>
+
+      <form id="resource-form" class="panel">
+        <h3>Add a resource</h3>
+        <div class="form-row">
+          <input type="text" id="resource-title" placeholder="Resource title" required>
+          <input type="text" id="resource-subject" placeholder="Subject (e.g. Math)">
+          <select id="resource-type">
+            <option>Notes</option>
+            <option>Video</option>
+            <option>Article</option>
+            <option>Link</option>
+            <option>Practice paper</option>
+          </select>
+          <input type="text" id="resource-note" placeholder="Note (optional)">
+          <button type="submit" class="btn btn-primary">Add resource</button>
+        </div>
+      </form>
+
+      <div id="resource-filters" class="filter-row"></div>
+      <div id="resource-list" class="list"></div>
+    </section>
+
+    <!-- HABITS -->
+    <section id="view-habits" class="view">
+      <div class="page-head">
+        <h1>🏆 Habit Tracker</h1>
+        <p>Check off each habit day by day and watch your streak build.</p>
+      </div>
+
+      <form id="habit-form" class="panel">
+        <h3>Add a habit</h3>
+        <div class="form-row">
+          <input type="text" id="habit-title" placeholder="Habit name" required>
+          <button type="submit" class="btn btn-primary">Add habit</button>
+        </div>
+      </form>
+
+      <div id="habit-list"></div>
+    </section>
+
+    <!-- PROGRESS DASHBOARD -->
+    <section id="view-progress" class="view">
+      <div class="page-head">
+        <h1>📈 Progress Dashboard</h1>
+        <p>Everything else in MindForge, rolled up in one place.</p>
+      </div>
+
+      <div class="dash-grid">
+        <div class="dash-card">
+          <h3>Task completion</h3>
+          <div class="ring-wrap">
+            <div class="ring-num" id="dash-task-ring">0%</div>
+            <div class="ring-lbl" id="dash-task-sub">0 of 0 tasks complete</div>
+          </div>
+        </div>
+
+        <div class="dash-card">
+          <h3>Goal progress</h3>
+          <div id="dash-goals"></div>
+        </div>
+
+        <div class="dash-card">
+          <h3>Habit streaks</h3>
+          <div id="dash-habits"></div>
+        </div>
+
+        <div class="dash-card">
+          <h3>Resources by subject</h3>
+          <div id="dash-resources"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PARENT PORTAL -->
+    <section id="view-parent" class="view">
+      <div class="page-head">
+        <h1>👨‍👩‍👧 Parent Portal</h1>
+        <p>A read-only summary — nothing here can be edited from this screen.</p>
+      </div>
+
+      <div class="parent-banner">Optional view: share this tab with a parent or guardian for a quick check-in.</div>
+
+      <div class="stat-row">
+        <div class="stat-box"><div class="num" id="parent-tasks">—</div><div class="lbl">Tasks</div></div>
+        <div class="stat-box"><div class="num" id="parent-goals">—</div><div class="lbl">Goals</div></div>
+        <div class="stat-box"><div class="num" id="parent-streak">—</div><div class="lbl">Habits</div></div>
+        <div class="stat-box"><div class="num" id="parent-resources">—</div><div class="lbl">Library</div></div>
+      </div>
+
+      <div class="dash-card">
+        <h3>Goal progress</h3>
+        <div id="parent-goal-list"></div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
